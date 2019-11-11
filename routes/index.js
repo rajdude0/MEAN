@@ -90,7 +90,9 @@ router.put('/posts/:post/comments/:comment/upvote', auth, function(req,res,next)
 
 });
 
-
+router.get('/allusers', auth, function(req, res, next) {
+  return res.status(200).json(['ram', 'shyam', 'hari', 'deepak', 'raj', 'tony', 'peter']);
+})
 
 router.post('/posts/:post/comments', auth, function(req, res, next) {
   var comment = new Comment(req.body);
